@@ -56,7 +56,7 @@ F1_table = {"ZA": [0.8 , 0.8 , 0.8 , 0.8 , 0.8 , 0.8],
 			"ZE": [4.2 , 3.3 , 2.8 , 2.4 , 2.2 , 2.0]}
 
 
-def calc_tbdy(soil,Ss,S1,soil_unit='vs30',period_unit='cms2',plot=False):
+def calc_tbdy(soil,Ss,S1,periods=None,soil_unit='vs30',period_unit='cms2',plot=False):
 	'''
 	This code is modified from here: https://github.com/gtuinsaat/TBDY2018_tepki_spektrumu 
 	Turkish Building Earthquake Regulation (TBDY-2018)
@@ -107,7 +107,10 @@ def calc_tbdy(soil,Ss,S1,soil_unit='vs30',period_unit='cms2',plot=False):
 	TL = 6
 
 	# Create Horizontal Spectra 
-	T_range = [0.01*item for item in range(1,1001)]
+	if periods is None:
+		T_range = [0.01*item for item in range(1,1001)]
+	else:
+		T_range = periods
 	SA_H = [(horizontal_spectra(period, SDs, SD1, TA, TB , TL)) for period in T_range]
 
 	# Create Vertical Spectra 
