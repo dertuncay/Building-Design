@@ -1,9 +1,9 @@
 function [ TT, Sa ] = dbybhy( pga, site_class,I )
 %Calculates design spectra for given PGA, Site Class and building importance 
 %coefficient/factor  by using Turkish Design Code 2007 standarts
-% Language: Turkish
-% http://www.imo.org.tr/resimler/dosya_ekler/bab4c5794c4be19_ek.pdf
-% Page: 11 - 13
+% Language: English
+% https://www.iibh.org/kijun/pdf/Turkey_04.pdf
+% Page: 10 - 12
 % Outputs
 % Sa - Spectral Acceleration
 % TT - Periods
